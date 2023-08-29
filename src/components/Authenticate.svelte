@@ -2,13 +2,30 @@
     let email = "";
     let password = "";
     let confirmPass = "";
+    let error = false;
+    let register = false;
+
+    function handleAuthenticate() {
+        if (!email || !password (register && !confirmPass)){
+            error = true;
+            return;
+        }
+    }
+
+    function handleRegister() {
+        register = !register;
+    }
 </script>
 
 <div class="authContainer">
-    <form action="">
-        <h1>login</h1>
+    <form>
+        <h1>{register ? "register" :'login'}</h1>
+        {#if error}
+            <p class="error">Incorrect information.</p>
+        {/if}
+
         <label> 
-            <p class={email ? ' above ' : ' center '}>Email</p>
+            <p class={email ? ' above ' : ' center '}>email</p>
             <input 
                 bind:value={email} 
                 type="email"
@@ -16,23 +33,39 @@
             />
         </label>
         <label> 
-            <p class={password ? ' above ' : ' center '}>Password</p>
+            <p class={password ? ' above ' : ' center '}>password</p>
             <input 
                 bind:value={password} 
                 type="password" 
                 placeholder="password"
             />
         </label>
-        <label> 
-            <p class={confirmPass ? ' above ' : ' center '}>Confirm Password</p>
-            <input
-                bind:value={confirmPass} 
-                type="password" 
-                placeholder="confirm password"
-            />
-        </label>    
+        {#if register}
+            <label> 
+                <p class={confirmPass ? ' above ' : ' center '}>confirm password</p>
+                <input
+                    bind:value={confirmPass} 
+                    type="password" 
+                    placeholder="confirm password"
+                />
+            </label>    
+        {/if}    
         <button type="button">Submit</button>
     </form>
+    <div class="options">
+        <p>Or</p>
+        {#if register}
+            <div>
+                <p>Already have an account?</p>
+                <p on:click={handleRegister} on:keydown={() => {}}>login</p>
+            </div>
+        {:else}
+            <div>
+                <p>Don't have an account?</p>
+                <p on:click={handleRegister} on:keydown={() => {}}>Register now</p>
+            </div>
+        {/if}
+    </div>
 </div>
 
 <style>
