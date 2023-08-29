@@ -32,9 +32,23 @@
 <div class="mainContainer">
     <div class="headerContainer">
         <h1>To do list</h1>
-        <button><i class="fa-regular fa-floppy-disk"></i><p>Save</p></button>
+        <div class="headerBtns">
+            <button>
+                <i class="fa-regular fa-floppy-disk"></i>
+                <p>Save</p>
+            </button>
+
+            <button>
+                <i class="fa-solid fa-right-from-bracket" />
+                <p>Logout</p>
+            </button>
+
+        </div>
     </div>
     <main>
+        {#if todoList.length === 0}
+            <p>You have nothing to do!</p>
+        {/if}
         {#each todoList as todo, index }
             <div class="todo">
                 <p>

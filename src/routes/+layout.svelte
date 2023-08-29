@@ -1,3 +1,14 @@
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        console.log('Mounting')
+        const unsubscribe = auth.onAuthStateChanged(async (user) => {
+            const currentPath = window.location.pathname;
+        })
+    })
+</script>
+
 <div class="mainContainer">
     <slot />
 </div>
