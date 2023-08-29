@@ -10,7 +10,22 @@
         }
         todoList = [...todoList, currTodo];
         currTodo = "";
+    }
 
+    function editTodo(index) {
+        let newTodoList = [...todoList].filter((val, i) => {
+            return i !== index;
+        });
+        currTodo = todoList[index];
+        todoList = newTodoList;
+    }
+
+    function removeTodo(index) {
+        let newTodoList = [...todoList].filter((val, i) => {
+            console.log(i, index, i !== index);
+            return i != index;
+        });
+        todoList = newTodoList;
     }
 </script>
 
@@ -22,7 +37,23 @@
     <main>
         {#each todoList as todo, index }
             <div class="todo">
-                {index + 1}. {todo}
+                <p>
+                    {index + 1}. {todo}
+                </p>
+                <div class="actions">
+                    <i 
+                    on:click={() => {
+                        editTodo(index)
+                    }}
+                     on:keydown={() => {}} 
+                     class="fa-regular fa-pen-to-square"></i>
+                    <i 
+                    on:click={() => {
+                        removeTodo(index)
+                    }}
+                     on:keydown={() => {}}  
+                    class="fa-regular fa-trash-can"></i>
+                </div>
             </div>
         {/each}
 
@@ -85,6 +116,21 @@
         flex-direction: column;
         gap: 8px;
         flex: 1;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 1.3rem;
+    }
+
+    .actions i {
+        cursor: pointer;
+    }
+    
+    .actions i:hover {
+        color: coral;
     }
 
     .enterTodo {
