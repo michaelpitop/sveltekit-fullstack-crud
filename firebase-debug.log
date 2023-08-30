@@ -1,0 +1,46 @@
+[debug] [2023-08-30T11:15:53.707Z] ----------------------------------------------------------------------
+[debug] [2023-08-30T11:15:53.711Z] Command:       /home/michaelpitop/.nvm/versions/node/v16.15.1/bin/node /home/michaelpitop/.nvm/versions/node/v16.15.1/bin/firebase deploy
+[debug] [2023-08-30T11:15:53.712Z] CLI Version:   12.5.2
+[debug] [2023-08-30T11:15:53.713Z] Platform:      linux
+[debug] [2023-08-30T11:15:53.713Z] Node Version:  v16.15.1
+[debug] [2023-08-30T11:15:53.714Z] Time:          Wed Aug 30 2023 13:15:53 GMT+0200 (Central European Summer Time)
+[debug] [2023-08-30T11:15:53.715Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-30T11:15:53.873Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-30T11:15:53.875Z] > authorizing via signed-in user (michaelpitop2@gmail.com)
+[debug] [2023-08-30T11:15:53.875Z] [iam] checking project sveltekit-fullstack-8b032 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-08-30T11:15:53.880Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sveltekit-fullstack-8b032:testIamPermissions [none]
+[debug] [2023-08-30T11:15:53.880Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sveltekit-fullstack-8b032:testIamPermissions x-goog-quota-user=projects/sveltekit-fullstack-8b032
+[debug] [2023-08-30T11:15:53.881Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sveltekit-fullstack-8b032:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-08-30T11:15:54.732Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sveltekit-fullstack-8b032:testIamPermissions 200
+[debug] [2023-08-30T11:15:54.733Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sveltekit-fullstack-8b032:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-08-30T11:15:54.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032 [none]
+[debug] [2023-08-30T11:15:55.264Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032 200
+[debug] [2023-08-30T11:15:55.266Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032 {"projectId":"sveltekit-fullstack-8b032","projectNumber":"913629835608","displayName":"sveltekit-fullstack","name":"projects/sveltekit-fullstack-8b032","resources":{"hostingSite":"sveltekit-fullstack-8b032"},"state":"ACTIVE","etag":"1_a0153ce6-046c-4571-93d5-b7e32c23281c"}
+[debug] [2023-08-30T11:15:59.094Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites pageToken=&pageSize=10
+[debug] [2023-08-30T11:16:00.155Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites 200
+[debug] [2023-08-30T11:16:00.156Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites {"sites":[{"name":"projects/sveltekit-fullstack-8b032/sites/sveltekit-fullstack-8b032","defaultUrl":"https://sveltekit-fullstack-8b032.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-30T11:16:00.160Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites 
+[debug] [2023-08-30T11:16:01.191Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites 200
+[debug] [2023-08-30T11:16:01.193Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/sites {"sites":[{"name":"projects/sveltekit-fullstack-8b032/sites/sveltekit-fullstack-8b032","defaultUrl":"https://sveltekit-fullstack-8b032.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-30T11:16:01.197Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/webApps/-/config [none]
+[debug] [2023-08-30T11:16:02.011Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/webApps/-/config 200
+[debug] [2023-08-30T11:16:02.012Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sveltekit-fullstack-8b032/webApps/-/config {"projectId":"sveltekit-fullstack-8b032","appId":"1:913629835608:web:66f06c19b4354552e9352d","storageBucket":"sveltekit-fullstack-8b032.appspot.com","apiKey":"AIzaSyCn3Yhwm0a-5z3yFYKx-R8lwdld4TVX94w","authDomain":"sveltekit-fullstack-8b032.firebaseapp.com","messagingSenderId":"913629835608"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-08-30T11:16:35.290Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:828:11)
+    at execSync (node:child_process:899:15)
+    at prepareFrameworks (/home/michaelpitop/.nvm/versions/node/v16.15.1/lib/node_modules/firebase-tools/lib/frameworks/index.js:367:42)
+    at async deploy (/home/michaelpitop/.nvm/versions/node/v16.15.1/lib/node_modules/firebase-tools/lib/deploy/index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
