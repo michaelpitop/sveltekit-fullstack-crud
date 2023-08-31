@@ -20,3 +20,5 @@ const config = {
         adapter: vercel()
     }
 };
+
+export default config;
